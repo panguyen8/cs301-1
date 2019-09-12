@@ -19,14 +19,14 @@ public class MySurfaceView extends SurfaceView {
     }
 
     public void onDraw(Canvas canvas) {
-        /*
+
         Paint paint = new Paint();
         paint.setColor(Color.MAGENTA);
         //paint.setStyle(Paint.Style.Stroke);
         paint.setStrokeWidth(5.0f);
 
         canvas.drawRect(100, 200, 200, 400, paint);
-        */
+
 
         Bitmap myImageBMP = BitmapFactory.decodeResource(getResources(), R.drawable.pigeon);
         canvas.drawColor(Color.BLACK);
