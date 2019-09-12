@@ -12,6 +12,9 @@ import android.util.AttributeSet;
 
 public class MySurfaceView extends SurfaceView {
 
+    private int size;
+
+
     public MySurfaceView(Context context, AttributeSet attrs) {
         super(context, attrs);
 
@@ -29,8 +32,16 @@ public class MySurfaceView extends SurfaceView {
 
 
         Bitmap myImageBMP = BitmapFactory.decodeResource(getResources(), R.drawable.pigeon);
-        canvas.drawColor(Color.BLACK);
-        canvas.drawBitmap(myImageBMP, 100, 10, null);
+        canvas.drawColor(Color.WHITE);
+
+        Bitmap newImage = Bitmap.createScaledBitmap(myImageBMP, size, size, false);
+
+        canvas.drawBitmap(newImage, 100, 10, null);
         Log.i("MySurfaceView.onDraw", "I just drew the image!");
+    }
+
+    public void setBitmapSize(int progress) {
+        size = progress;
+        invalidate();
     }
 }
